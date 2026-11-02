@@ -14,10 +14,18 @@
 <div class="hp" aria-hidden="true"><label for="gotcha">Leave blank</label><input id="gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
 <div><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div>
 <div><label for="role">Role</label><select id="role" name="role" required><option value="">Select</option><option>Student</option><option>Parent</option></select></div>
-<div><label for="board">Board / Grade <span class="note">(optional)</span></label><input id="board" name="board_grade" placeholder="e.g. CBSE Grade 9"></div>
-<div><label for="rating">Rating <span class="note">(optional)</span></label>
-<select id="rating" name="rating">
-<option value="">No rating</option>
+<div><label for="board">Board / Curriculum</label>
+<select id="board" name="board" required>
+<option value="">Select a board</option>
+<option>CBSE</option>
+<option>ICSE</option>
+<option>Cambridge</option>
+<option>IB</option>
+<option>Other</option>
+</select></div>
+<div><label for="rating">Rating</label>
+<select id="rating" name="rating" required>
+<option value="">Select a rating</option>
 <option>5 — Excellent</option>
 <option>4 — Good</option>
 <option>3 — All right</option>
