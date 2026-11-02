@@ -9,9 +9,9 @@ a{color:var(--accent)}a:focus-visible,button:focus-visible,input:focus-visible,s
 .wrap{max-width:52rem;margin:0 auto;padding:0 1.2rem}
 header{border-bottom:1px solid var(--line);background:var(--card)}
 .bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;padding:.8rem 0}
-.who{display:flex;align-items:center;gap:1rem;margin-top:1.75rem}
-.portrait{width:6rem;height:6rem;object-fit:cover;object-position:center 16%;border-radius:50%;flex:0 0 auto;display:block}
-.who h1{margin:0;font-size:clamp(1.55rem,4.5vw,2rem)}
+.who{display:flex;flex-wrap:nowrap;align-items:center;gap:.85rem;margin-top:1.75rem}
+.portrait{width:4rem;height:4rem;object-fit:cover;object-position:center 16%;border-radius:50%;flex:0 0 auto;display:block}
+.who h1{margin:0;min-width:0;font-size:clamp(1.35rem,4vw,1.85rem)}
 .quals{color:var(--muted);margin:1.35rem 0 0}
 .page-links{list-style:none;margin:2.5rem 0 1rem;padding:0}
 .page-links li{margin:.7rem 0}
