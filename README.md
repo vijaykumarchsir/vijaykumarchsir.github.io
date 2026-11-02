@@ -17,6 +17,6 @@ Static site for Mr Vijay Kumar Ch, English educator (Hyderabad). Plain HTML/CSS/
 - Achievements: `index.html`, look for `<!-- ACHIEVEMENT -->` comments.
 - Testimonials (read-only page): `feedback.html`. Replace PLACEHOLDER cards with approved ones only.
 - Feedback form: `feedback-submit.html`. Do not put it on `book.html`.
-- Substack notes: `writing.html`. Replace `https://substack.com/@vijaykumarch` with the real publication URL, and follow the `ADD A POST` comment.
+- Substack notes: `writing.html`. Profile: https://substack.com/@vkcsir. Follow the `ADD A POST` comment to add a card.
 - Nav/footer: `js/site.js`. Styles: `css/site.css`. Headings use Fraunces. Body text uses Literata.
 - Link any page to `book.html?purpose=Tuition|Materials|Other` to preselect the booking form.
