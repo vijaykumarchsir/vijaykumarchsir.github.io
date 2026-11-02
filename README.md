@@ -8,13 +8,15 @@ Static site for Mr Vijay Kumar Ch, English educator (Hyderabad). Plain HTML/CSS/
 3. Site goes live at https://vijaykumarchsir.github.io in a minute or two.
 
 ## Activate the form (FormSubmit)
-The form on `book.html` posts to `https://formsubmit.co/vijaykumarchsir@gmail.com`.
-1. Submit the form once from the live site.
-2. FormSubmit emails vijaykumarchsir@gmail.com a confirmation link. Click it.
+`book.html` and `feedback-submit.html` both post to `https://formsubmit.co/vijaykumarchsir@gmail.com`.
+1. Submit each form once from the live site.
+2. FormSubmit emails vijaykumarchsir@gmail.com a confirmation link. Click it. One confirmation covers that address for later submissions.
 3. After that, every submission arrives by email. (Optional: swap the address in the form for the random alias FormSubmit gives you, to hide the email.)
 
 ## Editing
 - Achievements: `index.html`, look for `<!-- ACHIEVEMENT -->` comments.
-- Testimonials: `feedback.html`, replace PLACEHOLDER cards with approved ones only.
-- Nav/footer: `js/site.js`. Styles: `css/site.css`.
-- Link any page to `book.html?purpose=Tuition|Materials|Feedback|Other` to preselect the form.
+- Testimonials (read-only page): `feedback.html`. Replace PLACEHOLDER cards with approved ones only.
+- Feedback form: `feedback-submit.html`. Do not put it on `book.html`.
+- Substack notes: `writing.html`. Replace `https://substack.com/@vijaykumarch` with the real publication URL, and follow the `ADD A POST` comment.
+- Nav/footer: `js/site.js`. Styles: `css/site.css`. Headings use Fraunces. Body text uses Literata.
+- Link any page to `book.html?purpose=Tuition|Materials|Other` to preselect the booking form.

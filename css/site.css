@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap');
 :root{--ink:#1d1f24;--muted:#5a5d66;--paper:#faf6ee;--card:#fffdf8;--line:#e4dccb;--accent:#8a3b12;--focus:#1a5fb4}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font:1.05rem/1.65 "Source Sans 3",system-ui,sans-serif}
+body{margin:0;background:var(--paper);color:var(--ink);font:1.0625rem/1.7 Literata,Georgia,serif}
 h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.2;margin:1.4em 0 .5em}
 h1{font-size:clamp(1.9rem,6vw,2.8rem);margin-top:.6em}
 a{color:var(--accent)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
@@ -22,4 +22,6 @@ blockquote{margin:0;font-style:italic}
 form{display:grid;gap:.9rem;max-width:34rem}label{font-weight:600;display:block;margin-bottom:.2rem}
 input,select,textarea{width:100%;padding:.6rem;border:1px solid #b9b09c;border-radius:5px;font:inherit;background:#fff;color:var(--ink)}
 .hp{position:absolute;left:-9999px}.note{color:var(--muted);font-size:.95rem}
+.meta{color:var(--muted);font-size:.92rem;margin:.15rem 0 .55rem}
 footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font-size:.95rem}
+footer nav ul{gap:.15rem .7rem}
