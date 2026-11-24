@@ -1,4 +1,4 @@
-/* Page-scoped styles for lantern.html only. Shared site.css stays unchanged. */
+/* Page-scoped styles for the store (index.html, and lantern.html if served as a copy). Shared site.css stays unchanged. */
 
 body.lantern-page{
   --ink:#141820;

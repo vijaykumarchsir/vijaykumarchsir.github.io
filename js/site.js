@@ -1,13 +1,12 @@
 (function(){
 var page=location.pathname.split('/').pop()||'index.html';
+if(page==='lantern.html')page='index.html';
 var links=[
-['index.html','Home'],
-['approach.html','Approach'],
+['index.html','The English Lantern'],
+['about.html','About'],
 ['resources.html','Resources'],
-['lantern.html','The English Lantern'],
-['writing.html','Writing'],
-['feedback.html','Feedback'],
-['feedback-submit.html','Submit feedback'],
+['writing.html','My Writings for Students'],
+['feedback.html','Student Feedback'],
 ['book.html','Book your session']
 ];
 function item(l){
