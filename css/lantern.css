@@ -1,0 +1,403 @@
+/* Page-scoped styles for lantern.html only. Shared site.css stays unchanged. */
+
+body.lantern-page{
+  --ink:#141820;
+  --ink-soft:#2d323c;
+  --muted:#5c616b;
+  --paper:#faf7f1;
+  --surface:#fffdf9;
+  --line:#e3dccd;
+  --amber:#96530d;
+  --amber-soft:rgba(150,83,13,.035);
+  --focus:#1a5fb4;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Inter,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+.lantern-page a{color:var(--ink)}
+.lantern-page a:focus-visible,
+.lantern-page button:focus-visible{
+  outline:2px solid var(--focus);
+  outline-offset:3px;
+}
+
+.lantern-page .wrap{
+  max-width:56rem;
+  margin-inline:auto;
+  padding-inline:1.4rem;
+}
+
+/* Header */
+.lantern-page header{
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+.lantern-page .bar{padding-block:0.95rem}
+.lantern-page .brand{
+  font-family:Newsreader,Georgia,serif;
+  font-weight:600;
+  font-size:1.02rem;
+  letter-spacing:-0.01em;
+}
+.lantern-page header nav a{
+  font-size:0.88rem;
+  color:var(--muted);
+  transition:color .15s ease;
+}
+.lantern-page header nav a:hover{color:var(--ink)}
+.lantern-page header nav a[aria-current=page]{border-bottom:1.5px solid var(--amber)}
+
+.lantern-page main{padding-block:0 4.5rem}
+
+/* Hero */
+.hero{
+  padding-block:2.8rem 2rem;
+}
+.hero-top{
+  display:flex;
+  align-items:center;
+  gap:0.65rem;
+  margin:0 0 1rem;
+}
+.lantern-mark{
+  width:1.25rem;
+  height:auto;
+  display:block;
+  color:var(--amber);
+  flex:0 0 auto;
+}
+.offer-kicker{
+  margin:0;
+  font-family:Inter,system-ui,sans-serif;
+  font-size:0.68rem;
+  font-weight:600;
+  letter-spacing:0.09em;
+  text-transform:uppercase;
+  color:var(--amber);
+}
+.hero h1{
+  margin:0 0 0.75rem;
+  font-family:Newsreader,Georgia,serif;
+  font-weight:500;
+  font-optical-sizing:auto;
+  font-size:clamp(2.25rem, 6vw, 3.65rem);
+  line-height:1.04;
+  letter-spacing:-0.025em;
+  color:var(--ink);
+}
+.hero .byline{
+  display:block;
+  margin-top:0.5rem;
+  font-family:Inter,system-ui,sans-serif;
+  font-style:normal;
+  font-weight:400;
+  font-size:0.96rem;
+  letter-spacing:0.005em;
+  color:var(--muted);
+}
+.hero .lead{
+  margin:0;
+  max-width:34rem;
+  font-size:1rem;
+  line-height:1.6;
+  color:var(--ink-soft);
+}
+
+/* Product Diptych */
+.offer-band{
+  padding-block:0.2rem 1.7rem;
+}
+.packs{
+  display:grid;
+  grid-template-columns:1fr;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+}
+.pack{
+  padding:1.9rem 1.5rem;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+.pack + .pack{
+  border-top:1px solid var(--line);
+  background:linear-gradient(180deg, var(--amber-soft), transparent 70%);
+}
+.pack-tag{
+  margin:0 0 0.45rem;
+  min-height:1rem;
+  font-size:0.7rem;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--amber);
+}
+.pack h2{
+  margin:0 0 0.85rem;
+  font-family:Newsreader,Georgia,serif;
+  font-weight:500;
+  font-optical-sizing:auto;
+  font-size:1.28rem;
+  line-height:1.25;
+  letter-spacing:-0.01em;
+}
+.price{
+  margin:0 0 1rem;
+  display:flex;
+  align-items:baseline;
+  gap:0.6rem;
+  font-family:Newsreader,Georgia,serif;
+  font-variant-numeric:tabular-nums;
+  line-height:1;
+}
+.price del{
+  font-size:1rem;
+  font-weight:500;
+  color:var(--muted);
+  text-decoration-thickness:1px;
+}
+.price .now{
+  font-size:clamp(2.1rem, 3.8vw, 2.65rem);
+  font-weight:600;
+  font-optical-sizing:auto;
+  letter-spacing:-0.025em;
+  color:var(--ink);
+}
+.pack-list{
+  list-style:none;
+  margin:0 0 0.5rem;
+  padding:0;
+  font-size:0.93rem;
+  line-height:1.6;
+  color:var(--ink-soft);
+}
+.pack-list li{
+  position:relative;
+  padding-left:0.95rem;
+  margin:0 0 0.2rem;
+}
+.pack-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0.68em;
+  width:0.35rem;
+  height:1px;
+  background:var(--amber);
+}
+.sub-note{
+  margin:0.15rem 0 0;
+  font-size:0.86rem;
+  line-height:1.5;
+  color:var(--muted);
+}
+.pack-action{
+  margin:auto 0 0;
+  padding-top:1.35rem;
+}
+
+/* Buttons & Links */
+.lantern-page .btn{
+  display:inline-block;
+  margin:0;
+  padding:0.65rem 1.3rem;
+  border-radius:999px;
+  background:var(--ink);
+  color:#faf7f1;
+  border:1px solid var(--ink);
+  font-family:Inter,system-ui,sans-serif;
+  font-size:0.88rem;
+  font-weight:600;
+  text-decoration:none;
+  cursor:pointer;
+  transition:background .15s ease, color .15s ease, border-color .15s ease;
+}
+.lantern-page .btn:hover{
+  background:#283040;
+  border-color:#283040;
+  color:#faf7f1;
+}
+.lantern-page .btn.ghost{
+  background:var(--surface);
+  color:var(--ink);
+  border:1px solid #cfc7b6;
+}
+.lantern-page .btn.ghost:hover{
+  background:var(--ink);
+  color:#faf7f1;
+  border-color:var(--ink);
+}
+.lantern-page .btn.slim{
+  padding:0.3rem 0.78rem;
+  font-size:0.8rem;
+}
+
+/* Sample bar */
+.sample-band{
+  padding-block:0.35rem 1.65rem;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem 1.5rem;
+}
+.sample-note{
+  margin:0;
+  font-size:0.94rem;
+  color:var(--ink-soft);
+}
+.sample-actions{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:0.75rem 1.35rem;
+}
+.text-link{
+  font-size:0.87rem;
+  color:var(--ink-soft);
+  text-decoration:underline;
+  text-decoration-color:#c8bca6;
+  text-underline-offset:4px;
+  transition:color .15s ease, text-decoration-color .15s ease;
+}
+.text-link:hover{
+  color:var(--ink);
+  text-decoration-color:var(--amber);
+}
+
+/* How to buy */
+.buy-band{
+  padding-block:2.8rem 0;
+}
+.buy-band h2{
+  margin:0 0 1.4rem;
+  font-family:Newsreader,Georgia,serif;
+  font-weight:500;
+  font-optical-sizing:auto;
+  font-size:1.45rem;
+  letter-spacing:-0.015em;
+}
+.buy-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2.2rem;
+  align-items:start;
+}
+.steps{
+  list-style:none;
+  margin:0;
+  padding:0;
+  border-top:1px solid var(--line);
+}
+.steps li{
+  display:grid;
+  grid-template-columns:2.2rem 1fr;
+  gap:0.9rem;
+  padding-block:1.15rem;
+  border-bottom:1px solid var(--line);
+  align-items:baseline;
+}
+.steps .num{
+  font-family:Newsreader,Georgia,serif;
+  font-size:0.92rem;
+  font-weight:600;
+  font-variant-numeric:tabular-nums;
+  color:var(--amber);
+}
+.step-body p{
+  margin:0;
+  font-size:0.94rem;
+  line-height:1.6;
+}
+.upi-id{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:0.86rem;
+  padding:0.1rem 0.4rem;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:4px;
+}
+.step-actions{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:0.5rem 1rem;
+  margin-top:0.55rem;
+}
+
+.qr-aside{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+.qr-frame{
+  margin:0;
+  width:9.5rem;
+  border:1px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+  background:var(--surface);
+}
+.qr-frame img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.qr-cap{
+  margin:0.6rem 0 0;
+  font-size:0.82rem;
+  line-height:1.45;
+  color:var(--muted);
+  max-width:13rem;
+}
+
+/* Footer */
+.lantern-page footer{
+  background:var(--paper);
+  border-top:1px solid var(--line);
+  padding-block:1.8rem 2.2rem;
+  font-size:0.84rem;
+  color:var(--muted);
+}
+.lantern-page footer nav ul{gap:.2rem .9rem}
+.lantern-page footer nav a{color:var(--muted);text-decoration:none}
+.lantern-page footer nav a:hover{color:var(--ink)}
+.lantern-page footer .btn{
+  background:transparent;
+  color:var(--muted);
+  border:1px solid #d5ccbc;
+  padding:0.34rem 0.85rem;
+  font-size:0.8rem;
+  font-weight:500;
+}
+.lantern-page footer .btn:hover{
+  background:var(--ink);
+  color:#faf7f1;
+  border-color:var(--ink);
+}
+
+@media (min-width:740px){
+  .offer-kicker{font-size:0.72rem;letter-spacing:0.12em}
+  .hero{padding-block:2.35rem 1.75rem}
+  .packs{grid-template-columns:1fr 1fr}
+  .pack{padding:1.85rem 2.2rem}
+  .pack + .pack{
+    border-top:0;
+    border-left:1px solid var(--line);
+  }
+  .sample-band{padding-block:0.2rem 1.55rem}
+  .buy-grid{
+    grid-template-columns:1fr 12.2rem;
+    gap:3rem;
+  }
+  .qr-frame{width:12.2rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .lantern-page .btn,.lantern-page header nav a,.text-link{transition:none}
+}
