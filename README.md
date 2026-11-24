@@ -16,7 +16,7 @@ The default page (`index.html`) is The English Lantern store. An older `/lantern
 3. After that, every submission arrives by email. (Optional: swap the address in the form for the random alias FormSubmit gives you, to hide the email.)
 
 ## Editing
-- About (photo, name, qualifications, page links): `about.html`.
+- About (`about.html`) is unlinked from the nav; do not delete the file.
 - Testimonials and the feedback form: `feedback.html`. Replace PLACEHOLDER cards with approved ones only. The form is at `#submit`.
 - Older `/feedback-submit.html` and `/lantern.html` addresses redirect; do not delete those files.
 - Substack notes: `writing.html`. Profile: https://substack.com/@vkcsir. Follow the `ADD A POST` comment to add a card.

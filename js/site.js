@@ -3,7 +3,6 @@ var page=location.pathname.split('/').pop()||'index.html';
 if(page==='lantern.html')page='index.html';
 var links=[
 ['index.html','The English Lantern'],
-['about.html','About'],
 ['resources.html','Resources'],
 ['writing.html','My Writings for Students'],
 ['feedback.html','Student Feedback'],
