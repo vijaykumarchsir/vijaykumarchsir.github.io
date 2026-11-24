@@ -8,7 +8,8 @@ a{color:var(--accent)}a:focus-visible,button:focus-visible,input:focus-visible,s
 .skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.5rem;z-index:9}
 .wrap{max-width:52rem;margin:0 auto;padding:0 1.2rem}
 header{border-bottom:1px solid var(--line);background:var(--card)}
-.bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;padding:.8rem 0}
+header .wrap{max-width:64rem}
+.bar{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:1rem;row-gap:.55rem;padding:.8rem 0}
 .who{display:flex;flex-wrap:nowrap;align-items:center;gap:.85rem;margin-top:1.75rem}
 .portrait{width:4rem;height:4rem;object-fit:cover;object-position:center 16%;border-radius:50%;flex:0 0 auto;display:block}
 .who h1{margin:0;min-width:0;font-size:clamp(1.35rem,4vw,1.85rem)}
@@ -16,9 +17,18 @@ header{border-bottom:1px solid var(--line);background:var(--card)}
 .page-links{list-style:none;margin:2.5rem 0 1rem;padding:0}
 .page-links li{margin:.7rem 0}
 .page-links a{font-family:Newsreader,Georgia,serif;font-size:1.15rem}
-.brand{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:1.05rem;color:var(--ink);text-decoration:none}
+.identity{grid-column:2;grid-row:1;display:flex;align-items:center;gap:.5rem;justify-self:end;font-family:Newsreader,Georgia,serif;font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none}
+.identity-photo{width:2.15rem;height:2.15rem;object-fit:cover;object-position:center 16%;border-radius:50%;flex:0 0 auto;display:block}
+.identity-name{font-family:inherit;font-weight:700;line-height:1.15;white-space:nowrap}
+header nav{grid-column:1;grid-row:1;min-width:0}
 nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.25rem 1.05rem}
 nav a{color:var(--ink);text-decoration:none;padding:.2rem 0;font-size:.9rem}nav a[aria-current=page]{border-bottom:2px solid var(--accent)}
+@media (max-width:739px){
+header nav{grid-column:1/-1;grid-row:2}
+.identity{grid-column:2;grid-row:1}
+.identity-photo{width:1.85rem;height:1.85rem}
+.identity-name{font-size:.98rem}
+}
 main{padding:1rem 0 3rem}.lead{font-size:1.2rem;color:var(--muted)}
 .btn{display:inline-block;padding:.7rem 1.2rem;border-radius:6px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600;border:0;font-size:1rem;cursor:pointer;margin:.3rem .4rem .3rem 0}
 .btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}

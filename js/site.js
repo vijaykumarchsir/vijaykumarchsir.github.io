@@ -14,7 +14,7 @@ return '<li><a href="'+l[0]+'"'+(l[0]===page?' aria-current="page"':'')+'>'+l[1]
 }
 var sub='<a class="btn" href="https://substack.com/@vkcsir" rel="noopener" target="_blank">Subscribe on Substack</a>';
 var h=document.getElementById('site-header');
-if(h)h.innerHTML='<div class="wrap bar"><a class="brand" href="index.html">Vijay Kumar Ch</a><nav aria-label="Main"><ul>'+links.map(item).join('')+'</ul></nav></div>';
+if(h)h.innerHTML='<div class="wrap bar"><nav aria-label="Main"><ul>'+links.map(item).join('')+'</ul></nav><a class="identity" href="index.html"><img class="identity-photo" src="images/portrait.jpg" width="640" height="641" alt="Vijay Kumar Ch"><span class="identity-name">Vijay Kumar Ch</span></a></div>';
 var f=document.getElementById('site-footer');
 if(f)f.innerHTML='<div class="wrap"><nav aria-label="Footer"><ul>'+links.map(item).join('')+'</ul></nav><p>'+sub+'</p><p><a href="mailto:vijaykumarchsir@gmail.com">vijaykumarchsir@gmail.com</a> · <a href="https://wa.me/916302479339">WhatsApp +91 63024 79339</a></p><p>&copy; '+new Date().getFullYear()+' Vijay Kumar Ch</p></div>';
 var s=document.getElementById('purpose');

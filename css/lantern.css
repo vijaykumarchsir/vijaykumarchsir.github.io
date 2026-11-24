@@ -28,6 +28,9 @@ body.lantern-page{
   margin-inline:auto;
   padding-inline:1.4rem;
 }
+.lantern-page header .wrap{
+  max-width:64rem;
+}
 
 /* Header */
 .lantern-page header{
@@ -35,12 +38,6 @@ body.lantern-page{
   border-bottom:1px solid var(--line);
 }
 .lantern-page .bar{padding-block:0.95rem}
-.lantern-page .brand{
-  font-family:Newsreader,Georgia,serif;
-  font-weight:600;
-  font-size:1.02rem;
-  letter-spacing:-0.01em;
-}
 .lantern-page header nav a{
   font-size:0.88rem;
   color:var(--muted);
