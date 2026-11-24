@@ -15,9 +15,14 @@
 <p class="lead">What students and parents have said.</p>
 <!-- EDIT: replace placeholders with approved testimonials only. Delete a card you do not need. -->
 <div class="grid">
-<div class="card placeholder"><p class="tag">Placeholder</p><blockquote>“[Student testimonial goes here.]”</blockquote><p>— [Name], [Board], Grade [X]</p></div>
-<div class="card placeholder"><p class="tag">Placeholder</p><blockquote>“[Parent testimonial goes here.]”</blockquote><p>— [Parent of student], [Board]</p></div>
-<div class="card placeholder"><p class="tag">Placeholder</p><blockquote>“[Student testimonial goes here.]”</blockquote><p>— [Name], [Board], Grade [X]</p></div>
+<!-- SAMPLE TESTIMONIAL: remove this card before publishing real ones. For preview only, so the credit style can be judged. -->
+<div class="card sample">
+<p class="tag">Sample</p>
+<blockquote>“Your classes really helped me a lot. Before, I was always confused by the directed writing questions, but now I know how to plan my answers, and my marks went up in the mock exam.”</blockquote>
+<p>— Aanya R., Grade 9 Student, CBSE</p>
+</div>
+<div class="card placeholder"><p class="tag">Placeholder</p><blockquote>“[Student testimonial goes here.]”</blockquote><p>— [Name], Grade [X] Student, [Board]</p></div>
+<div class="card placeholder"><p class="tag">Placeholder</p><blockquote>“[Parent testimonial goes here.]”</blockquote><p>— [Name], Grade [X] Parent, [Board]</p></div>
 </div>
 
 <div class="feedback-cta">
@@ -37,46 +42,44 @@
 <input type="hidden" name="_next" id="next" value="">
 <div class="hp" aria-hidden="true"><label for="gotcha">Leave blank</label><input id="gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
 <div><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div>
-<div><label for="role">Role</label><select id="role" name="role" required><option value="">Select</option><option>Student</option><option>Parent</option></select></div>
-<div><label for="board">Board / Curriculum</label>
-<select id="board" name="board" required>
-<option value="">Select a board</option>
-<option>CBSE</option>
-<option>ICSE</option>
-<option>Cambridge</option>
-<option>IB</option>
-<option>Other</option>
+<div><label for="role">I am a</label>
+<select id="role" name="role" required>
+<option value="">Select</option>
+<option>Student</option>
+<option>Parent</option>
 </select></div>
 <div><label for="grade">Grade</label>
 <select id="grade" name="grade" required>
 <option value="">Select a grade</option>
-<option>6</option>
-<option>7</option>
-<option>8</option>
-<option>9</option>
-<option>10</option>
-<option>11</option>
-<option>12</option>
+<option>Grade 6</option>
+<option>Grade 7</option>
+<option>Grade 8</option>
+<option>Grade 9</option>
+<option>Grade 10</option>
+<option>Grade 11</option>
+<option>Grade 12</option>
+<option>Other</option>
 </select></div>
-<div><label for="rating">Rating</label>
-<select id="rating" name="rating" required>
-<option value="">Select a rating</option>
-<option>5 — Excellent</option>
-<option>4 — Good</option>
-<option>3 — All right</option>
-<option>2 — Mixed</option>
-<option>1 — Poor</option>
-</select></div>
+<fieldset class="board-group">
+<legend id="board-legend">Board</legend>
+<div class="board-options" role="radiogroup" aria-labelledby="board-legend">
+<label><input type="radio" name="board" value="CBSE" required> CBSE</label>
+<label><input type="radio" name="board" value="ICSE"> ICSE</label>
+<label><input type="radio" name="board" value="Cambridge"> Cambridge</label>
+<label><input type="radio" name="board" value="IB"> IB</label>
+<label><input type="radio" name="board" value="Other"> Other</label>
+</div>
+</fieldset>
 <div>
-<label for="message">Message</label>
-<textarea id="message" name="message" rows="5" required></textarea>
+<label for="email">Email</label>
+<input id="email" name="email" type="email" required autocomplete="email">
+<span class="note field-note">“Kept private — never shown on the site.”</span>
 </div>
-<div id="lt-results" class="lt-box" hidden aria-live="polite"></div>
-<div class="form-actions">
-<button class="btn alt" type="button" id="check-writing">Check writing</button>
-<button class="btn" type="submit" id="send-feedback">Send feedback</button>
+<div>
+<label for="feedback">Your feedback</label>
+<textarea id="feedback" name="feedback" rows="5" required></textarea>
 </div>
-<p class="note">Your details are used only to read your comment.</p>
+<p><button class="btn" type="submit" id="send-feedback">Send feedback</button></p>
 </form>
 </div>
 </section>

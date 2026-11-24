@@ -41,14 +41,10 @@ footer nav ul{gap:.15rem .7rem}
 .feedback-panel.is-open{grid-template-rows:1fr}
 .feedback-panel>.feedback-panel-inner{overflow:hidden}
 .feedback-panel .lead{margin-top:1.2rem}
-.lt-box{margin:0;padding:0}
-.lt-status{margin:0 0 .6rem;color:var(--muted);font-size:.95rem}
-.lt-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1rem;margin:0 0 .6rem}
-.lt-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.lt-item{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.5rem 1rem;padding:.7rem 0;border-bottom:1px solid var(--line)}
-.lt-suggest{margin:0;flex:1 1 14rem}
-.lt-from{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px}
-.lt-to{font-weight:600}
-.lt-why{margin:.15rem 0 0;font-size:.88rem;color:var(--muted)}
-.form-actions{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.2rem}
-.form-actions .btn{margin:0}
+.field-note{display:block;margin:.3rem 0 0;font-weight:400}
+.board-group{border:0;margin:0;padding:0}
+.board-group legend{font-weight:600;margin:0 0 .45rem;padding:0}
+.board-options{display:flex;flex-wrap:wrap;gap:.45rem 1.1rem}
+.board-options label{font-weight:400;display:inline-flex;align-items:center;gap:.4rem;margin:0;cursor:pointer}
+.board-options input{width:auto;margin:0}
+.card.sample .tag{color:var(--muted)}
