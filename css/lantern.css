@@ -397,7 +397,7 @@ body.lantern-page{
 }
 
 @media (prefers-reduced-motion:reduce){
-  .lantern-page .btn,.lantern-page header nav a,.text-link,.lantern-page .menu-overlay,.lantern-page .menu-drawer,.lantern-page .menu-backdrop{transition:none}
+  .lantern-page .btn,.lantern-page header nav a,.text-link,.lantern-page .menu-drawer,.lantern-page .menu-backdrop{transition:none}
 }
 
 .lantern-page .menu-drawer .menu-book{

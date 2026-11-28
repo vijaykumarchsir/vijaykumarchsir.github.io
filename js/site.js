@@ -2,9 +2,6 @@
 var page=location.pathname.split('/').pop()||'index.html';
 if(page==='lantern.html')page='index.html';
 var params=new URLSearchParams(location.search);
-var raw=(params.get('header')||'a').toLowerCase();
-var variant=(raw==='b'||raw==='drawer')?'b':'a';
-var q='?header='+variant;
 var links=[
 ['index.html','The English Lantern'],
 ['resources.html','Resources'],
@@ -12,43 +9,31 @@ var links=[
 ['feedback.html','Student Feedback'],
 ['book.html','Book your session']
 ];
-function href(file){return file+q;}
 function item(l){
-return '<li><a href="'+href(l[0])+'"'+(l[0]===page?' aria-current="page"':'')+'>'+l[1]+'</a></li>';
+return '<li><a href="'+l[0]+'"'+(l[0]===page?' aria-current="page"':'')+'>'+l[1]+'</a></li>';
 }
 var sub='<a class="btn" href="https://substack.com/@vkcsir" rel="noopener" target="_blank">Subscribe on Substack</a>';
 var h=document.getElementById('site-header');
 if(h){
-h.innerHTML='<div class="wrap bar"><button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span class="menu-toggle-lines" aria-hidden="true"></span></button><a class="identity" href="'+href('index.html')+'"><img class="identity-photo" src="images/portrait.jpg" width="640" height="641" alt="Vijay Kumar Ch"><span class="identity-name">Vijay Kumar Ch</span></a></div>';
+h.innerHTML='<div class="wrap bar"><button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span class="menu-toggle-lines" aria-hidden="true"></span></button><a class="identity" href="index.html"><img class="identity-photo" src="images/portrait.jpg" width="640" height="641" alt="Vijay Kumar Ch"><span class="identity-name"><span class="identity-initial">V</span>IJAY <span class="identity-initial">K</span>UMAR <span class="identity-initial">C</span>H</span></a></div>';
 }
 var f=document.getElementById('site-footer');
 if(f)f.innerHTML='<div class="wrap"><nav aria-label="Footer"><ul>'+links.map(item).join('')+'</ul></nav><p>'+sub+'</p><p><a href="mailto:vijaykumarchsir@gmail.com">vijaykumarchsir@gmail.com</a> · <a href="https://wa.me/916302479339">WhatsApp +91 63024 79339</a></p><p>&copy; '+new Date().getFullYear()+' Vijay Kumar Ch</p></div>';
 
-document.documentElement.setAttribute('data-header',variant);
-
+var textLinks=links.filter(function(l){return l[0]!=='book.html';});
+var bookCurrent=page==='book.html'?' aria-current="page"':'';
 var menu=document.createElement('div');
 menu.id='site-menu';
-menu.className=variant==='b'?'menu-drawer':'menu-overlay';
+menu.className='menu-drawer';
 menu.setAttribute('role','dialog');
 menu.setAttribute('aria-modal','true');
 menu.setAttribute('aria-labelledby','menu-title');
 menu.setAttribute('aria-hidden','true');
-var closeBtn='<button type="button" class="menu-close" aria-label="Close menu"><span class="menu-close-icon" aria-hidden="true"></span></button>';
-var title='<h2 id="menu-title" class="visually-hidden">Menu</h2>';
-if(variant==='b'){
-var textLinks=links.filter(function(l){return l[0]!=='book.html';});
-var bookCurrent=page==='book.html'?' aria-current="page"':'';
-menu.innerHTML=closeBtn+title+'<nav aria-label="Main"><ul>'+textLinks.map(item).join('')+'</ul><a class="btn menu-book" href="'+href('book.html')+'"'+bookCurrent+'>Book your session</a></nav>';
-}else{
-menu.innerHTML=closeBtn+title+'<nav aria-label="Main"><ul>'+links.map(item).join('')+'</ul></nav>';
-}
-var backdrop=null;
-if(variant==='b'){
-backdrop=document.createElement('div');
+menu.innerHTML='<button type="button" class="menu-close" aria-label="Close menu"><span class="menu-close-icon" aria-hidden="true"></span></button><h2 id="menu-title" class="visually-hidden">Menu</h2><nav aria-label="Main"><ul>'+textLinks.map(item).join('')+'</ul><a class="btn menu-book" href="book.html"'+bookCurrent+'>Book your session</a></nav>';
+var backdrop=document.createElement('div');
 backdrop.className='menu-backdrop';
 backdrop.setAttribute('hidden','');
 document.body.appendChild(backdrop);
-}
 document.body.appendChild(menu);
 
 function syncHeaderHeight(){
@@ -76,7 +61,8 @@ syncHeaderHeight();
 lastFocus=document.activeElement;
 menu.classList.add('is-open');
 menu.setAttribute('aria-hidden','false');
-if(backdrop){backdrop.removeAttribute('hidden');backdrop.classList.add('is-open');}
+backdrop.removeAttribute('hidden');
+backdrop.classList.add('is-open');
 document.body.classList.add('menu-open');
 if(toggle){toggle.setAttribute('aria-expanded','true');toggle.setAttribute('aria-label','Close menu');}
 setInert(true);
@@ -92,7 +78,8 @@ function closeMenu(){
 if(!menu.classList.contains('is-open'))return;
 menu.classList.remove('is-open');
 menu.setAttribute('aria-hidden','true');
-if(backdrop){backdrop.classList.remove('is-open');backdrop.setAttribute('hidden','');}
+backdrop.classList.remove('is-open');
+backdrop.setAttribute('hidden','');
 document.body.classList.remove('menu-open');
 if(toggle){toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open menu');}
 setInert(false);
@@ -103,10 +90,7 @@ if(toggle)toggle.addEventListener('click',function(){
 if(menu.classList.contains('is-open'))closeMenu();else openMenu();
 });
 if(close)close.addEventListener('click',closeMenu);
-if(backdrop)backdrop.addEventListener('click',closeMenu);
-menu.addEventListener('click',function(e){
-if(variant==='a'&&e.target===menu)closeMenu();
-});
+backdrop.addEventListener('click',closeMenu);
 document.addEventListener('keydown',function(e){
 if(!menu.classList.contains('is-open'))return;
 if(e.key==='Escape'){e.preventDefault();closeMenu();return;}
