@@ -1,6 +1,7 @@
 /* Page-scoped styles for the store (index.html, and lantern.html if served as a copy). Shared site.css stays unchanged. */
 
 body.lantern-page{
+  --accent:#96530d;
   --ink:#141820;
   --ink-soft:#2d323c;
   --muted:#5c616b;
@@ -37,7 +38,7 @@ body.lantern-page{
   background:var(--paper);
   border-bottom:1px solid var(--line);
 }
-.lantern-page .bar{padding-block:0.95rem}
+.lantern-page .bar{padding-block:1.05rem}
 .lantern-page header nav a{
   font-size:0.88rem;
   color:var(--muted);
@@ -396,5 +397,24 @@ body.lantern-page{
 }
 
 @media (prefers-reduced-motion:reduce){
-  .lantern-page .btn,.lantern-page header nav a,.text-link{transition:none}
+  .lantern-page .btn,.lantern-page header nav a,.text-link,.lantern-page .menu-overlay,.lantern-page .menu-drawer,.lantern-page .menu-backdrop{transition:none}
+}
+
+.lantern-page .menu-drawer .menu-book{
+  margin:0;
+  padding:.42rem .9rem;
+  font-size:.8rem;
+  font-weight:600;
+  letter-spacing:.02em;
+  border-radius:4px;
+  background:transparent;
+  color:var(--ink);
+  border:1.5px solid var(--ink);
+}
+.lantern-page .menu-drawer .menu-book:hover,
+.lantern-page .menu-drawer .menu-book:focus-visible,
+.lantern-page .menu-drawer .menu-book[aria-current=page]{
+  background:var(--ink);
+  color:#faf7f1;
+  border-color:var(--ink);
 }
